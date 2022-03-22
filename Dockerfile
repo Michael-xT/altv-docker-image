@@ -53,7 +53,7 @@ WORKDIR /opt/altv/
 
 # Meant are the default values provided by the entrypoint script.
 # Of course you can change the port as you like by using the
-# environment variable "ALTV_SERVER_PORT".
+# environment variable "ALTV_SERVER_PORT" .
 EXPOSE 7788/udp
 EXPOSE 7788/tcp
 

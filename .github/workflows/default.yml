@@ -23,18 +23,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        name: checkout
-      - name: install deps
+        name: Run Checkout Action
+      - name: Install Dependencies
         run: sudo apt-get update && sudo apt-get install -y jq wget
-      - name: set script permissions
+      - name: Set script permissions
         run: chmod +x ./scripts/push.sh ./scripts/getVersion.sh
-      - name: login to DockerHub
+      - name: Login to DockerHub
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-      - name: build dev
+      - name: Build dev version
         run: ./scripts/push.sh $IMAGE dev $(./scripts/getVersion.sh dev)
-      - name: build rc
+      - name: Build rc version
         run: ./scripts/push.sh $IMAGE rc $(./scripts/getVersion.sh rc)
-      - name: build release
+      - name: Build release version
         run: ./scripts/push.sh $IMAGE release $(./scripts/getVersion.sh release)
-      - name: logout from DockerHub
+      - name: Logout from DockerHub
         run: docker logout

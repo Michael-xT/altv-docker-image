@@ -1,8 +1,8 @@
 #!/bin/bash
 
 START=/opt/altv/start.sh
-if [[ -f "$START" ]]; then
-    echo "$FILE exists, starting server..."
+if test -f "$START"; then
+    echo "$START exists, starting server..."
     sh start.sh
 else
     echo "Start script missing downloading server files..."
@@ -31,5 +31,5 @@ else
     wget --no-cache -q -O /opt/altv/start.sh https://raw.githubusercontent.com/Michael-xT/altv-docker-image/main/.docker/scripts/start.sh
     chmod +x /opt/altv/start.sh 
 
-    sh start.sh
+    sh /opt/altv/start.sh
 fi

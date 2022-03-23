@@ -1,5 +1,5 @@
 
-FROM ubuntu:focal-20210723
+FROM ubuntu:latest
 
 COPY ./.docker/scripts/entrypoint.sh /root/
 

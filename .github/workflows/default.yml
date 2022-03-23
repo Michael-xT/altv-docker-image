@@ -2,7 +2,7 @@ name: DefaultCI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     branches: []
   # Update the image every now and then

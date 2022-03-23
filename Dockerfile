@@ -5,18 +5,7 @@ COPY ./.docker/scripts/entrypoint.sh /root/
 
 RUN apt-get update && \
     apt-get install -y wget libatomic1 libc-bin && \
-    chmod +x /root/entrypoint.sh && \
-    apt-get purge -y wget && \
-    apt autoremove -y && \
-    apt-get clean
-
-######
-# Install JS Module
-######
-RUN apt-get install -y wget jq && \
-    apt-get purge -y wget jq && \
-    apt autoremove -y && \
-    apt-get clean
+    chmod +x /root/entrypoint.sh &&
 
 ######
 # Install .NET 6 Module
@@ -31,7 +20,6 @@ RUN apt-get install -y wget gnupg && \
     # install altV module
     mkdir -p /usr/share/dotnet/host/fxr/ && \
     # remove unused tools
-    apt-get purge -y wget gnupg && \
     apt autoremove -y && \
     apt-get clean
 

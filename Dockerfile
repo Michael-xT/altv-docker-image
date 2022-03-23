@@ -1,20 +1,11 @@
 
 FROM ubuntu:focal-20210723
 
-ARG BRANCH=release
-
 COPY ./.docker/scripts/entrypoint.sh /root/
 
 RUN apt-get update && \
     apt-get install -y wget libatomic1 libc-bin && \
-    mkdir -p /opt/altv/modules && \
-    mkdir -p /opt/altv/resources && \
-    mkdir -p /opt/altv/data && \
-    wget --no-cache -q -O /opt/altv/altv-server https://cdn.altv.mp/server/${BRANCH}/x64_linux/altv-server && \
-    wget --no-cache -q -O /opt/altv/data/vehmodels.bin https://cdn.altv.mp/server/${BRANCH}/x64_linux/data/vehmodels.bin && \
-    wget --no-cache -q -O /opt/altv/data/vehmods.bin https://cdn.altv.mp/server/${BRANCH}/x64_linux/data/vehmods.bin && \
-    wget --no-cache -q -O /opt/altv/data/clothes.bin https://cdn.altv.mp/server/${BRANCH}/x64_linux/data/clothes.bin && \
-    chmod +x /opt/altv/altv-server /root/entrypoint.sh && \
+    chmod +x /root/entrypoint.sh && \
     apt-get purge -y wget && \
     apt autoremove -y && \
     apt-get clean
@@ -23,9 +14,6 @@ RUN apt-get update && \
 # Install JS Module
 ######
 RUN apt-get install -y wget jq && \
-    mkdir -p /opt/altv/modules/js-module/ && \
-    wget --no-cache -q -O /opt/altv/modules/js-module/libnode.so.83 https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.83 && \
-    wget --no-cache -q -O /opt/altv/modules/js-module/libjs-module.so https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so && \
     apt-get purge -y wget jq && \
     apt autoremove -y && \
     apt-get clean
@@ -41,9 +29,7 @@ RUN apt-get install -y wget gnupg && \
     apt-get update && \
     apt-get -y install apt-transport-https dotnet-runtime-6.0 && \
     # install altV module
-    wget --no-cache -q -O /opt/altv/modules/libcsharp-module.so https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/modules/libcsharp-module.so && \
     mkdir -p /usr/share/dotnet/host/fxr/ && \
-    wget --no-cache -q -O /opt/altv/AltV.Net.Host.dll https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/AltV.Net.Host.dll && \
     # remove unused tools
     apt-get purge -y wget gnupg && \
     apt autoremove -y && \

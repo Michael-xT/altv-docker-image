@@ -1,1 +1,2 @@
-./altv-server --logfile /opt/altv/logs ${@:1}
+NOW=$(date +"%H-%M-%S--%d-%m-%Y")
+./altv-server --logfile /opt/altv/logs/$NOW-log.txt

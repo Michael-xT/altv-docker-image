@@ -5,7 +5,7 @@ if test -f "$START"; then
     echo "start.sh existing -- running start.sh:"
     sh start.sh
 else
-    echo "Start script missing downloading server files..."
+    echo "start.sh missing -- downloading server files..."
     BRANCH="release"
 
     echo "Downloading Server Files"

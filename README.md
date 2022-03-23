@@ -26,3 +26,7 @@ docker run -d -v /<your_path>:/opt/altv -p 7788:7788/tcp -p 7788:7788/udp --name
 > Always make sure to expose ports TCP as well as UDP in order to be able to connect to the server itself.
 
 > You can find logs of your server in <your_path>/logs
+
+## Custom Start File
+
+This Docker Image was built with the possibility of chaning start.sh script for your own requirements. This script is found in /opt/altv folder and it is downloaded only once after first run of this docker image ( or not at all if previous version is found in <your_path> ).

@@ -5,7 +5,7 @@ COPY ./.docker/scripts/entrypoint.sh /root/
 
 RUN apt-get update && \
     apt-get install -y wget libatomic1 libc-bin && \
-    chmod +x /root/entrypoint.sh &&
+    chmod +x /root/entrypoint.sh
 
 ######
 # Install .NET 6 Module

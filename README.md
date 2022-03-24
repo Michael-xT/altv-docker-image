@@ -2,10 +2,10 @@
 <p align="center"><img src="https://github.com/Michael-xT/altv-docker-image/raw/main/.github/assets/logo-256px.png"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/docker/pulls/michaelxt/altv-server?logo=docker&style=for-the-badge">
-  <img src="https://img.shields.io/docker/image-size/michaelxt/altv-server/release?label=Release%20Image%20Size&logo=docker&style=for-the-badge">
+  <a href="https://hub.docker.com/r/michaelxt/altv-server"><img src="https://img.shields.io/docker/pulls/michaelxt/altv-server?logo=docker&style=for-the-badge">
+  <img src="https://img.shields.io/docker/image-size/michaelxt/altv-server/release?label=Release%20Image%20Size&logo=docker&style=for-the-badge"></a>
   <br>
-  <img src="https://img.shields.io/github/workflow/status/Michael-xT/altv-docker-image/DefaultCI?logo=github&style=for-the-badge">
+  <a href="https://github.com/Michael-xT/altv-docker-image/actions"><img src="https://img.shields.io/github/workflow/status/Michael-xT/altv-docker-image/DefaultCI?logo=github&style=for-the-badge"></a>
 </p>
 
 <h1 align="center">Unofficial alt:V Server Docker Image</h1>

@@ -18,8 +18,11 @@ RUN apt-get install -y wget gnupg && \
     apt-get update && \
     apt-get -y install apt-transport-https dotnet-runtime-6.0 && \
     # install altV module
+    wget --no-cache -q -O /opt/altv/modules/libcsharp-module.so https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/modules/libcsharp-module.so && \
     mkdir -p /usr/share/dotnet/host/fxr/ && \
+    wget --no-cache -q -O /opt/altv/AltV.Net.Host.dll https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/AltV.Net.Host.dll && \
     # remove unused tools
+    apt-get purge -y wget gnupg && \
     apt autoremove -y && \
     apt-get clean
 

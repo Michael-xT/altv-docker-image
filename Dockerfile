@@ -1,5 +1,5 @@
 
-FROM ubuntu:21.10
+FROM ubuntu:20.04
 
 COPY ./.docker/scripts/entrypoint.sh /root/
 

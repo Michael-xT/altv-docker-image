@@ -25,11 +25,18 @@ else
     echo "Downloading NodeJS Module"
     # Get Node Module
     mkdir -p /opt/altv/modules/js-module/ 
-    wget --no-cache -q -O /opt/altv/modules/js-module/libnode.so.83 https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.83 
+    wget --no-cache -q -O /opt/altv/modules/js-module/libnode.so.102 https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libnode.so.102
     wget --no-cache -q -O /opt/altv/modules/js-module/libjs-module.so https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/js-module/libjs-module.so 
 
     echo "NodeJS Module downloaded!"
     
+    echo "Downloading JS Bytecode Module"
+    
+    wget --no-cache -q -O /opt/altv/modules/libjs-bytecode-module.so https://cdn.altv.mp/js-module/${BRANCH}/x64_linux/modules/libjs-bytecode-module.so
+ 
+    echo "JS Bytecode Module downloaded!"
+        
+        
     echo "Downloading C# Module"
     #Get C# Module
     wget --no-cache -q -O /opt/altv/modules/libcsharp-module.so https://cdn.altv.mp/coreclr-module/${BRANCH}/x64_linux/modules/libcsharp-module.so 

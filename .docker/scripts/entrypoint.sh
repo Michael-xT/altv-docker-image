@@ -15,9 +15,9 @@ else
     mkdir -p /opt/altv/data 
     mkdir -p /opt/altv/logs
     wget --no-cache -q -O /opt/altv/altv-server https://cdn.altv.mp/server/${BRANCH}/x64_linux/altv-server 
-    wget --no-cache -q -O /opt/altv/data/vehmodels.bin https://cdn.altv.mp/server/${BRANCH}/data/vehmodels.bin 
-    wget --no-cache -q -O /opt/altv/data/vehmods.bin https://cdn.altv.mp/server/${BRANCH}/data/vehmods.bin 
-    wget --no-cache -q -O /opt/altv/data/clothes.bin https://cdn.altv.mp/server/${BRANCH}/data/clothes.bin 
+    wget --no-cache -q -O /opt/altv/data/vehmodels.bin https://cdn.altv.mp/data/${BRANCH}/data/vehmodels.bin 
+    wget --no-cache -q -O /opt/altv/data/vehmods.bin https://cdn.altv.mp/data/${BRANCH}/data/vehmods.bin 
+    wget --no-cache -q -O /opt/altv/data/clothes.bin https://cdn.altv.mp/data/${BRANCH}/data/clothes.bin
     chmod +x /opt/altv/altv-server 
 
     echo "Server files downloaded!"

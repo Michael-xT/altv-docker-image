@@ -8,23 +8,23 @@
   <a href="https://github.com/Michael-xT/altv-docker-image/actions"><img src="https://img.shields.io/github/workflow/status/Michael-xT/altv-docker-image/DefaultCI?logo=github&style=for-the-badge"></a>
 </p>
 
-<h1 align="center">Unofficial alt:V Server Docker Image</h1>
+<h1 align="center">➰ Unofficial alt:V Server 🐳 Docker Image</h1>
 
 This Docker Image contains a default alt:V server. It starts a alt:V server with no config, but ready to start development.
 
-# About
+# ℹ️ About
 
 The Docker image is created for the alt:V Server including all commonly used modules. Currently, the `js-module` and the `csharp-module` are supported. Your module can of course be added too! Feel free to make a PR to add your module!
 
-# Usage
+# 🏎️ Usage:
 
-## Shell Command
+## 1) 🔋 Shell Command
 To get started just run the Docker image as follows:
 
 ```sh
 docker run -d -v /<your_path>:/opt/altv -p 7788:7788/tcp -p 7788:7788/udp --name altV-server michaelxt/altv-server:release
 ```
-## Docker Compose:
+## 2) 💽 Docker Compose:
 ```
 services:
   altvserver:
@@ -46,6 +46,13 @@ version: '3'
 
   > You can find logs of your server in <b><your_path>/logs</b>
 
-## Custom Start File
+## 🖊️Custom Start File
 
 This Docker Image was built with the possibility of chaning start.sh script for your own requirements. This script is found in /opt/altv folder and it is downloaded only once after first run of this docker image ( or not at all if previous version is found in <your_path> ).
+
+
+# ❔How-tos
+
+## ⤴️How to update your server version
+In order to update your server version you simply need to 
+remove ``start.sh`` file from ``<your_path>``

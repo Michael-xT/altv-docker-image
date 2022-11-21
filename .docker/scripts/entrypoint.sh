@@ -2,7 +2,7 @@
 
 START=/opt/altv/start.sh
 if test -f "$START"; then
-    echo "start.sh existing -- running start.sh:"
+    echo "start.sh existing -- running already downloaded server"
     sh start.sh
 else
     echo "start.sh missing -- downloading server files..."
@@ -49,6 +49,12 @@ else
     wget --no-cache -q -O /opt/altv/start.sh https://raw.githubusercontent.com/Michael-xT/altv-docker-image/main/.docker/scripts/start.sh
     chmod +x /opt/altv/start.sh 
 
-    echo "start.sh downloaded -- running start.sh:"
+    echo "---------------------------------------"
+    echo "Server download finished, please make sure to configure your server."
+    echo "More about that here: "
+    echo "https://docs.altv.mp/articles/configs/server.html"
+    echo ""
+    echo ""
+    echo "start.sh -- running start.sh:"
     sh /opt/altv/start.sh
 fi

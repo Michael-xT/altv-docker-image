@@ -14,7 +14,11 @@ This Docker Image contains a default alt:V server. It starts a alt:V server with
 
 # ℹ️ About
 
-The Docker image is created for the alt:V Server including all commonly used modules. Currently, the `js-module` and the `csharp-module` are supported. Your module can of course be added too! Feel free to make a PR to add your module!
+The Docker image is created for the alt:V Server including all commonly used modules. Currently, the `js-module` and the `csharp-module` are supported and also included when running the docker image. Your module can of course be added too! Feel free to make a PR to add your module!
+
+Please be aware that this server does not come with a default config file. In order to change settings you will need to create and change a `server.cfg` configuration file. <a href="https://docs.altv.mp/articles/configs/server.html">More about server.cfg here.</a>
+
+<b>For the moment, only release version of the server is available.</b>
 
 # 🏎️ Usage:
 
@@ -50,7 +54,7 @@ version: '3'
 
 This Docker Image was built with the possibility of chaning start.sh script for your own requirements. This script is found in /opt/altv folder and it is downloaded only once after first run of this docker image ( or not at all if previous version is found in <your_path> ).
 
-
+<hr>
 # ❔How-tos
 
 ## ⤴️How to update your server version

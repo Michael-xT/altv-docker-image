@@ -1,26 +1,22 @@
-name: DefaultCI
+name: UpdateImageCI
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: []
-  # Update the image every now and then
+  # Update the everyday at 00:00:00
   schedule:
     - cron: "0 0 * * *"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  default-build:
+  build:
     if: ${{!startsWith(github.ref, 'refs/tags/')}}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
       IMAGE: michaelxt/altv-server
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         name: Run Checkout Action
       - name: Install Dependencies
@@ -29,10 +25,10 @@ jobs:
         run: chmod +x ./scripts/push.sh ./scripts/getVersion.sh
       - name: Login to DockerHub
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-      - name: Build dev version
-        run: ./scripts/push.sh $IMAGE dev $(./scripts/getVersion.sh dev)
-      - name: Build rc version
-        run: ./scripts/push.sh $IMAGE rc $(./scripts/getVersion.sh rc)
+      #- name: Build dev version
+      #  run: ./scripts/push.sh $IMAGE dev $(./scripts/getVersion.sh dev)
+      #- name: Build rc version
+      #  run: ./scripts/push.sh $IMAGE rc $(./scripts/getVersion.sh rc)
       - name: Build release version
         run: ./scripts/push.sh $IMAGE release $(./scripts/getVersion.sh release)
       - name: Logout from DockerHub
